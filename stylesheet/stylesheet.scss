@@ -1,10 +1,8 @@
-@import "vars";
-@import "libs";
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	color: #666;
-	font-size: 14px;
+	font-size: 12px;
 	line-height: 20px;
 	width: 100%;
 }
@@ -71,13 +69,6 @@ div.required .control-label:before {
 	color: #F00;
 	font-weight: bold;
 }
-
-
-
-
-
-
-
 /* Gradent to all drop down menus */
 .dropdown-menu li > a:hover {
 	text-decoration: none;
@@ -86,19 +77,13 @@ div.required .control-label:before {
 	background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
 	background-repeat: repeat-x;
 }
-
-/* header */
-.header-middle{
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
 /* top */
 #top {
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 1px 5px rgba(0,0,0,.1);
-    padding-top: 6px;
-    padding-bottom: 6px;
+	background-color: #EEEEEE;
+	border-bottom: 1px solid #e2e2e2;
+	padding: 4px 0px 3px 0;
+	margin: 0 0 20px 0;
+	min-height: 40px;
 }
 #top .container {
 	padding: 0 20px;
@@ -763,4 +748,31 @@ h2.price {
 .btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
     background-image: none;
     background-color: #df5c39;
+}
+
+.header{
+	&-top{
+		max-width: 1780px;
+		width: 100%;
+		padding: 0 15px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.language-wrap{
+		margin-left: 10%;
+	}
+
+}
+
+.links-wrap{
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 0;
+	margin-left: auto;
+	li{
+		margin-left: 15px;
+	}
 }
