@@ -1,8 +1,11 @@
+@import "libs";
+@import "vars";
+
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: montserrat, sans-serif;
 	font-weight: 400;
 	color: #666;
-	font-size: 12px;
+	font-size: 16px;
 	line-height: 20px;
 	width: 100%;
 }
@@ -163,7 +166,7 @@ div.required .control-label:before {
 	border: 1px solid #E6E6E6;
 	color: #666;
 	box-shadow: none;
-	text-shadow: none;
+	text-shadow: none; 
 }
 #cart.open > .btn:hover {
 	color: #444;
@@ -196,13 +199,56 @@ div.required .control-label:before {
 	margin: 20px 0;
 }
 /* menu */
-#menu {
-	background-color: #229ac8;
-	background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
-	background-repeat: repeat-x;
-	border-color: #1f90bb #1f90bb #145e7a;
-	min-height: 40px;
+.menu-wrap{
+	// background: rgba(0, 0, 0, 0.91);
+	// background-image: linear-gradient(to bottom, #3a3a3a, #3a3a3a);
+	// border-color: #1f90bb #1f90bb #145e7a;
 }
+#menu {
+	background-repeat: repeat-x;
+	margin-bottom: 0;
+	padding: 0;
+	.navbar-nav{
+		list-style: none;
+	}
+	.navbar-toggler{
+		border: none;
+		color: $accent;
+		outline: none;
+		outline-color: transparent;
+	}
+
+}
+
+.navbar-collapse{
+	position: absolute;
+	right: -15px;
+	top: 100%;
+	z-index: 10;
+	color: #ffffff;
+	background: rgba(0, 0, 0, 0.91);
+	box-sizing: border-box;
+	padding: 20px 45px;
+	.nav-link{
+		color: $accent;
+	}
+	.navbar-nav{
+		box-sizing: border-box;
+	}
+	.nav-item{
+		box-sizing: border-box;
+		.nav-link{
+			box-sizing: border-box;
+			box-sizing: content-box;
+		}
+	}
+}
+.navbar-light .navbar-nav .nav-link{
+	color: $accent;
+	
+}
+
+
 #menu .nav > li > a {
 	color: #fff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -618,7 +664,7 @@ h2.price {
 .product-thumb .button-group {
 	border-top: 1px solid #ddd;
 	background-color: #eee;
-	overflow: auto;
+	display: flex;
 }
 .product-list .product-thumb .button-group {
 	border-left: 1px solid #ddd;
@@ -632,7 +678,6 @@ h2.price {
 	width: 60%;
 	border: none;
 	display: inline-block;
-	float: left;
 	background-color: #eee;
 	color: #888;
 	line-height: 38px;
@@ -749,22 +794,93 @@ h2.price {
     background-image: none;
     background-color: #df5c39;
 }
-
+.g-container{
+	max-width: 1570px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+#common-home{
+	#content{
+		max-width: 1570px;
+		width: 100%;
+		background: #FFFFFF;
+		box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.47);
+		padding: 0;
+	}
+}
 .header{
+	.g-container{
+		display: flex;
+		align-items: center;
+	}
 	&-top{
 		max-width: 1780px;
 		width: 100%;
-		padding: 0 15px;
+		padding: 12px 15px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
 	}
 	.language-wrap{
 		margin-left: 10%;
 	}
+	&-middle{
+		background: #1A1A1A;
+		height: 62px;
+		padding-left: 15px;
+		padding-right: 15px;
+		display: flex;
+		#logo{
+			width: 147px;
+		}
+	}
+	.g-basket{
+		margin-left: auto;
+		margin-right: 15px;
+	}
+	.account-wrap{
+		margin-right: 15px;
+	}
 
 }
-
+.header-bottom{
+	.g-container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 35px;
+		padding-bottom: 45px;
+	}
+	#search{
+		max-width: 622px;
+		border: 4px solid #F0B254;
+		box-sizing: border-box;
+		border-radius: 10px;
+		height: 50px;
+		input{
+			border: none;
+			height: 100%;
+			border-radius: 10px;
+			&:focus{
+				box-shadow: none;
+			}
+		}
+		button{
+			border: none;
+			background: transparent;
+			padding: 8px 10px;
+			&:focus{
+				outline: none;
+			}
+			.fa{
+				font-size: 24px;
+				color: #3a3a3a;
+			}
+		}
+	}
+}
 .links-wrap{
 	list-style: none;
 	display: flex;
@@ -772,7 +888,34 @@ h2.price {
 	align-items: center;
 	padding-left: 0;
 	margin-left: auto;
+	margin-bottom: 0;
 	li{
 		margin-left: 15px;
 	}
 }
+
+
+.swiper-viewport.g-swiper-wrap{
+	border-radius: 0;
+	box-shadow: none;
+	.g-swiper .swiper-slide{
+		img{
+		max-width: 100%!important;
+		width: 100%!important;
+		height: auto!important;
+		display: block!important;
+		}
+	}
+	// "\f104" angle-left;
+	// "\f105" angle-right
+
+	.swiper-button-prev:before{
+		content: "\f104";
+		color: $accent;
+	}
+	.swiper-button-next:before{
+		content: "\f105";
+		color: $accent;
+	}
+}
+
