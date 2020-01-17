@@ -76,8 +76,6 @@ div.required .control-label:before {
 .dropdown-menu li > a:hover {
 	text-decoration: none;
 	color: #ffffff;
-	background-color: #229ac8;
-	background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
 	background-repeat: repeat-x;
 }
 /* top */
@@ -178,6 +176,7 @@ div.required .control-label:before {
 #cart .dropdown-menu {
 	min-width: 100%;
 }
+
 @media (max-width: 478px) {
 	#cart .dropdown-menu {
 		width: 100%;
@@ -219,7 +218,11 @@ div.required .control-label:before {
 	}
 
 }
-
+.account-wrap{
+	.dropdown-toggle::after{
+		display: none;
+	}
+}
 .navbar-collapse{
 	position: absolute;
 	right: -15px;
@@ -261,6 +264,16 @@ div.required .control-label:before {
 }
 #menu .dropdown-menu {
 	padding-bottom: 0;
+	background: rgba(0, 0, 0, 0.2);
+	a{
+		color: $accent;
+		font-size: 14px;
+	}
+}
+
+
+.dropdown-item:hover, .dropdown-item:focus{
+	background: transparent;
 }
 #menu .dropdown-inner {
 	display: table;
@@ -317,14 +330,23 @@ div.required .control-label:before {
 	background-repeat: repeat-x;
 	border-color: #1f90bb #1f90bb #145e7a;
 }
-#menu .btn-navbar:hover, #menu .btn-navbar:focus, #menu .btn-navbar:active, #menu .btn-navbar.disabled, #menu .btn-navbar[disabled] {
+#menu .btn-navbar:hover,
+#menu .btn-navbar:focus,
+#menu .btn-navbar:active,
+#menu .btn-navbar.disabled, 
+#menu .btn-navbar[disabled] {
 	color: #ffffff;
 	background-color: #229ac8;
 }
+
+#menu .nav-link:hover{
+	color: $blue-color;
+}
+
 @media (min-width: 768px) {
-	#menu .dropdown:hover .dropdown-menu {
-		display: block;
-	}
+	// #menu .dropdown:hover .dropdown-menu {
+	// 	display: block;
+	// }
 }
 @media (max-width: 767px) {
 	#menu {
@@ -359,30 +381,68 @@ div.required .control-label:before {
 /* content */
 #content {
 	min-height: 600px;
+	margin-bottom: 80px;
 }
 /* footer */
 footer {
 	margin-top: 30px;
-	padding-top: 30px;
-	background-color: #303030;
-	border-top: 1px solid #ddd;
-	color: #e2e2e2;
+	color: #000;
 }
+
+.footer-line{
+	height: 62px;
+	background: #1A1A1A;
+}
+
 footer hr {
 	border-top: none;
 	border-bottom: 1px solid #666;
 }
 footer a {
-	color: #ccc;
+	color: #000;
 }
 footer a:hover {
-	color: #fff;
+	color: #3a3a3a;
 }
 footer h5 {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 13px;
+	font-size: 25px;
 	font-weight: bold;
-	color: #fff;
+	color: #000;
+}
+.info-link{
+	display: flex;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	max-width: 1100px;
+	padding: 20px 0;
+	margin-bottom: 25px;
+	li{
+		position: relative;
+		margin-right: 30px;
+		&:after{
+			content: '';
+			display: block;
+			width: 3px;
+			height: 100%;
+			position: absolute;
+			right: -15px;
+			background: $accent;
+			top: 50%;
+			transform: translateY(-50%);
+
+		}
+	}
+}
+.footer #logo{
+	margin-bottom: 20px;
+}
+.powered{
+	font-size: 25px;
+	line-height: 1.4;
+	color: #000;
+	font-weight: 700;
 }
 /* alert */
 .alert {
@@ -821,10 +881,43 @@ h2.price {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
 	}
 	.language-wrap{
-		margin-left: 10%;
+		margin-left: 7%;
+		margin-right: 20px;
+		.btn{
+			font-size: 15px;
+			text-transform: uppercase;
+			background: transparent;
+			color: #000;
+			border-color: #000;
+			border-radius: 0;
+			outline: none;
+			&:focus{
+				outline: none;
+			}
+		}
+		.dropdown-menu{
+			outline: none;
+			padding: 0;
+			.btn{
+				border-color: transparent;
+			}
+		}
+	}
+	.phone-wrap{
+		a{
+			font-size: 20px;
+			color: $accent;
+			.fa{
+				font-size: 20px;
+			}
+		}
+		span{
+			color: #000;
+			font-weight: 600;
+			font-size: 20px;
+		}
 	}
 	&-middle{
 		background: #1A1A1A;
@@ -845,6 +938,23 @@ h2.price {
 	}
 
 }
+.links-wrap{
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 0;
+	margin-left: auto;
+	margin-bottom: 0;
+	li{
+		margin-left: 15px;
+		a{
+			color: #000;
+			font-weight: 600;
+		}
+	}
+}
+
 .header-bottom{
 	.g-container{
 		display: flex;
@@ -881,18 +991,7 @@ h2.price {
 		}
 	}
 }
-.links-wrap{
-	list-style: none;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-left: 0;
-	margin-left: auto;
-	margin-bottom: 0;
-	li{
-		margin-left: 15px;
-	}
-}
+
 
 
 .swiper-viewport.g-swiper-wrap{
@@ -917,5 +1016,11 @@ h2.price {
 		content: "\f105";
 		color: $accent;
 	}
+}
+.sub-title{
+	padding: 50px 0;
+	font-size: 35px;
+	font-weight: bold;
+	color: #000;
 }
 
